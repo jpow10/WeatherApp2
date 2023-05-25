@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+      <div class="container">
+          <div class="weather-app">
+              <form class="weather-search-form" id="search-form">
+                  <div class="row">
+                      <div class="col-6">
+                  <input type="Search" placeholder="Search for city" id="city-input" class="form-control shadow"/>
+                  </div>
+                  <div class="col-3">
+                      <input type="Submit" value="Search"
+                      class="form-control btn shadow"/>
+                      </div>
+                      <div class="col-3">
+                          <button class="btn btn shadow" id="currentLocationButton">Current Location</button></div>
+                      </div>
+              </form>    
+      <br />
+      <span> 🌦️ </span>
+      <br />
+      <h1 id="city">
+          <strong></strong>
+      </h1>
+      <span id="datetime"></span></br>
+      <h2>
+        <span id="temperature"> Temperature is...</span>°
+      </h2>
+      <div class="elements">
+        <ul>
+          <li>
+                Humidity: <span id="humidity">45</span>%</li>
+                <li>
+                    Wind: <span id="wind">12</span>km/h</li>
+                </ul>
+      <div class="row">
+        <div class="col">Friday</div>
+        <div class="col">Saturday</div>
+        <div class="col">Sunday</div>
+        <div class="col">Monday</div>
+        <div class="col">Tuesday</div>
+      </div>
+      <div class="row">
+        <div class="col">☀️</div>
+        <div class="col">☀️</div>
+        <div class="col">☔️</div>
+        <div class="col">🌦️</div>
+        <div class="col">☀️</div>
+      </div>
+      <div class="row">
+        <div class="col">16°c</div>
+        <div class="col">17°c</div>
+        <div class="col">14°c</div>
+        <div class="col">12°c</div>
+        <div class="col">16°c</div>
+      </div>
+      <div class="row">
+        <div class="col">15°c</div>
+        <div class="col">16°c</div>
+        <div class="col">12°c</div>
+        <div class="col">11°c</div>
+        <div class="col">17°c</div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

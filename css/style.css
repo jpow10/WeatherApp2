@@ -1,0 +1,32 @@
+body {
+  background-image: url("https://www.ionos.co.uk/digitalguide/fileadmin/_processed_/4/a/csm_cloud-speicher-dienste-t_a7b497d909.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background: rgb(132, 132, 132);
+  text-align: center;
+  color: #000000;
+  padding: 40px;
+  color: #ffff;
+  position: block;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #fde90f;
+  padding: 20px;
+}
+
+.dateTime {
+  padding: 80px;
+}
+
+a {
+  font-size: 30px;
+}
+
+li {
+  list-style: none;
+}
