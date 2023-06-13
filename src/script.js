@@ -12,20 +12,25 @@ setInterval(updateDateTime, 1000);
 
 function displayWeatherCondition(response) {
   console.log(response.data.name);
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    data.temperature.current
   );
 
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+
+  document.querySelector("#humidity").innerHTML = data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
 }
 
+console.log(response.data.condition.description);
+  let description = document.querySelector("#description");
+  description.innerHTML = response.data.condition.description;
+
 function searchCity(city) {
-  let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiKey = "b0aa3bbe4a50o046t63f82874a31fac6";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Exeter&key=b0aa3bbe4a50o046t63f82874a31fac6&units=metric;
   axios.get(apiUrl).then(displayWeatherCondition);
   console.log(apiUrl);
 }
