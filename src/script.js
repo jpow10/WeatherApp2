@@ -14,23 +14,21 @@ function displayWeatherCondition(response) {
   console.log(response.data.name);
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(
-    data.temperature.current
+    response.data.temperature.current
   );
 
-
-  document.querySelector("#humidity").innerHTML = data.temperature.humidity;
+  document.querySelector("#humidity").innerHTML =
+    response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-}
-
-console.log(response.data.condition.description);
   let description = document.querySelector("#description");
   description.innerHTML = response.data.condition.description;
+}
 
 function searchCity(city) {
   let apiKey = "b0aa3bbe4a50o046t63f82874a31fac6";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Exeter&key=b0aa3bbe4a50o046t63f82874a31fac6&units=metric;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=b0aa3bbe4a50o046t63f82874a31fac6&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
   console.log(apiUrl);
 }

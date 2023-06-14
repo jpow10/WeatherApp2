@@ -30,6 +30,7 @@ a {
 
 li {
   list-style: none;
+  text-transform: capitalize;
 }
 
 footer {
