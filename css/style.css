@@ -14,10 +14,6 @@ body {
   margin: 0 auto;
 }
 
-.img {
-  text-align: center;
-}
-
 h1 {
   color: #fde90f;
   padding: 20px;
@@ -27,9 +23,11 @@ h1 {
   padding: 80px;
 }
 
-a {
-  font-size: 30px;
-  color: rgb(0, 0, 0);
+.h2 {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+  color: black;
 }
 
 li {

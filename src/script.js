@@ -13,9 +13,10 @@ setInterval(updateDateTime, 1000);
 function displayWeatherCondition(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.temperature.current
-  );
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celciusTemperature);
+
+  celciusTemperature = response.data.temperature.current;
 
   document.querySelector("#humidity").innerHTML =
     response.data.temperature.humidity;
@@ -48,5 +49,26 @@ function handleSubmit(event) {
 
 let weathersearchform = document.querySelector("#search-form");
 weathersearchform.addEventListener("submit", handleSubmit);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displaycelciusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displaycelciusTemperature);
+
+let celciusTemperature = null;
 
 searchCity("Exeter");
