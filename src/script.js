@@ -11,12 +11,10 @@ setInterval(updateDateTime, 1000);
 //
 
 function displayWeatherCondition(response) {
-  console.log(response.data);
+  celciusTemperature = response.data.temperature.current;
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML =
     Math.round(celciusTemperature);
-
-  celciusTemperature = response.data.temperature.current;
 
   document.querySelector("#humidity").innerHTML =
     response.data.temperature.humidity;
