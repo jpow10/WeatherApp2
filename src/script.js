@@ -10,7 +10,8 @@ setInterval(updateDateTime, 1000);
 
 //
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -40,6 +41,13 @@ function displayForecast() {
   console.log(forecastHTML);
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "b0aa3bbe4a50o046t63f82874a31fac6";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=b0aa3bbe4a50o046t63f82874a31fac6&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeatherCondition(response) {
   celciusTemperature = response.data.temperature.current;
   document.querySelector("#city").innerHTML = response.data.city;
@@ -60,6 +68,8 @@ function displayWeatherCondition(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.icon);
+
+  getForecast(response.data.coordinates);
 }
 
 function searchCity(city) {
@@ -100,4 +110,3 @@ celciusLink.addEventListener("click", displaycelciusTemperature);
 let celciusTemperature = null;
 
 searchCity("Exeter");
-displayForecast();
